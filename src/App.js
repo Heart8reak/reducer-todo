@@ -2,6 +2,11 @@ import React, { useReducer } from 'react';
 
 import './App.css';
 
+import { TodoForm } from './components/TodoForm';
+import { TodoList } from './components/TodoList';
+
+import { initialState, reducer } from './reducers/todoReducer';
+
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state);
@@ -20,15 +25,22 @@ function App() {
   };
 
   const clearComplete = id => {
-    dispatch({ type: 'CLEAR_COMPLETED', payload: id });
+    dispatch({ type: 'CLEAR_COMPLETED' });
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        {state.map(todo => (
-          <h1 key={todo.id}>{todo.name}</h1>
-        ))}
+        <TodoForm addTodo={addTodo} />
+        <TodoList state={state} handleComplete={handleComplete} />
+        <button
+          onClick={e => {
+            e.preventDefault();
+            clearComplete();
+          }}
+        >
+          Clear Todo
+        </button>
       </header>
     </div>
   );
