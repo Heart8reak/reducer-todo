@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
 import Button from '@material-ui/core/Button';
-import AddSharpIcon from '@material-ui/icons/AddSharp';
 
 import './App.css';
 
