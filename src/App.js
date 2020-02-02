@@ -1,4 +1,6 @@
 import React, { useReducer } from 'react';
+import Button from '@material-ui/core/Button';
+import AddSharpIcon from '@material-ui/icons/AddSharp';
 
 import './App.css';
 
@@ -24,7 +26,7 @@ function App() {
     dispatch({ type: 'COMPLETED_TODO', payload: id });
   };
 
-  const clearComplete = id => {
+  const clearCompleted = id => {
     dispatch({ type: 'CLEAR_COMPLETED' });
   };
 
@@ -32,15 +34,20 @@ function App() {
     <div className="App">
       <header className="App-header">
         <TodoForm addTodo={addTodo} />
-        <TodoList state={state} handleComplete={handleComplete} />
-        <button
+        <br />
+
+        <Button
+          type="submit"
+          variant="outlined"
+          color="secondary"
           onClick={e => {
             e.preventDefault();
-            clearComplete();
+            clearCompleted();
           }}
         >
-          Clear Todo
-        </button>
+          Clear
+        </Button>
+        <TodoList state={state} handleComplete={handleComplete} />
       </header>
     </div>
   );

@@ -11,10 +11,10 @@ export const reducer = (state, action) => {
     case 'ADD_TODO':
       return [...state, action.payload];
 
-    case 'COMPLETED__TODO':
+    case 'COMPLETED_TODO':
       return state.map(item => {
         return item.id === action.payload
-          ? { ...item, completed: !item.complted }
+          ? { ...item, completed: !item.completed }
           : item;
       });
 
