@@ -30,7 +30,6 @@ export function TodoList(props) {
                 handleComplete={props.handleComplete}
               />
             </ListItem>
-            <Divider />
           </List>
         );
       })}

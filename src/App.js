@@ -32,6 +32,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1 className="lead">My ThingaMaJig to remind me </h1>
         <TodoForm addTodo={addTodo} />
         <br />
 

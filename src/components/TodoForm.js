@@ -30,7 +30,7 @@ export function TodoForm(props) {
       <TextField
         name="todo"
         label="Things Todo"
-        variant="filled"
+        variant="outlined"
         value={form}
         onChange={e => {
           setForm(e.target.value);
