@@ -2,9 +2,9 @@ import React from 'react';
 import { Todo } from './Todo';
 
 import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
+// import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+// import ListItemText from '@material-ui/core/ListItemText';
 
 import GridList from '@material-ui/core/GridList';
 
@@ -14,13 +14,11 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden'
-    //   backgroundColor: theme.palette.background.paper,
   },
   gridList: {
     width: 400,
-    height: 250,
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-    transform: 'translateZ(0)'
+    height: 250
+    // transform: 'translateZ(0)'
   },
   titleBar: {
     background:
@@ -45,9 +43,8 @@ export function TodoList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={'auto'} spacing={0}>
+      <GridList cellHeight={100} spacing={0}>
         {props.state.map(item => {
-          console.log(props.state);
           return (
             <ListItem button>
               <Todo

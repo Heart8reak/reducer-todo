@@ -1,6 +1,6 @@
 export const initialState = [
   {
-    item: 'Learn about reducers',
+    todo: 'Learn about reducers',
     completed: false,
     id: Math.random()
   }
